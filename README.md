@@ -11,7 +11,7 @@ A full-stack AI chatbot application featuring real-time streaming responses, a r
 
 ## Overview
 
-This project demonstrates a chatbot implementation featuring:
+This project includes a chatbot implementation featuring:
 
 - **Real-time streaming responses** using Server-Sent Events (SSE)
 - **Modern React frontend** with TypeScript and responsive design
