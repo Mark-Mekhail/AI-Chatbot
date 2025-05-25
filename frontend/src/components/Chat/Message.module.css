@@ -1,0 +1,108 @@
+.message {
+  max-width: 85%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  animation: fadeIn 0.3s var(--transition-ease);
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: var(--shadow-sm);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  width: auto;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: var(--user-message-bg);
+  color: var(--user-message-color);
+  border-bottom-right-radius: 0;
+  box-shadow: var(--shadow-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.assistant {
+  align-self: flex-start;
+  background-color: var(--assistant-message-bg);
+  color: var(--assistant-message-color);
+  border-bottom-left-radius: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.message-content {
+  word-break: break-word;
+}
+
+.message-timestamp {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-top: 0.5rem;
+  text-align: right;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.streaming {
+  border: 1px solid var(--accent-color, #0078d4);
+  box-shadow: 0 0 8px rgba(0, 120, 212, 0.3);
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 0.1em;
+  height: 1.2em;
+  margin-left: 2px;
+  background-color: currentColor;
+  animation: blink 1s infinite;
+  font-weight: bold;
+  vertical-align: middle;
+  position: relative;
+}
+
+.cursor-indicator-group {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .message {
+    max-width: 90%;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    max-width: 95%;
+    padding: var(--spacing-sm);
+  }
+
+  .message-timestamp {
+    font-size: 0.65rem;
+  }
+}

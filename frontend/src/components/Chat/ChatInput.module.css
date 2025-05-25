@@ -1,0 +1,112 @@
+.input-form {
+  display: flex;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+  background-color: white;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 5;
+  flex-wrap: nowrap;
+}
+
+.input {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-full);
+  outline: none;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-speed) var(--transition-ease);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--light-background);
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  background-color: white;
+}
+
+.button {
+  margin-left: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--transition-speed) var(--transition-ease);
+  min-width: 80px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s var(--transition-ease);
+}
+
+.button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.button.cancel {
+  background-color: var(--error-color, #d83b01);
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.button:disabled {
+  background-color: #94a3b8; /* Slate 400 */
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .input-form {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .input {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 70px;
+    margin-left: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .input-form {
+    padding: var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .button {
+    padding: var(--spacing-sm);
+    min-width: 60px;
+  }
+}
