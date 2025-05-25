@@ -16,5 +16,4 @@ RUN mkdir -p /app/models && \
 
 COPY . .
 
-# Run tests when the container starts
 CMD ["python", "-m", "pytest", "-v", "--color=yes"]
