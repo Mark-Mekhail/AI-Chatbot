@@ -106,16 +106,9 @@ The first startup may take several minutes as Docker downloads images and the AI
 - **Responsive design** - Works on desktop and mobile
 - **Error handling** - Graceful degradation when issues occur
 
-### Example Conversations
-```
-You: Hello! What can you help me with?
-AI: Hello! I'm an AI assistant. I can help you with...
+### Demo
 
-You: Can you explain machine learning?
-AI: Machine learning is a subset of artificial intelligence...
-```
-
-*Screenshots and demo GIF coming soon*
+A demo of the application can be viewed [here](https://youtu.be/k6o18tVtKn8).
 
 ## Architecture Overview
 
