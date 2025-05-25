@@ -10,6 +10,11 @@ RUN apt-get update && \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Create a dummy model file to prevent errors
+RUN mkdir -p /app/models && \
+    echo "Test model file" > /app/models/test-model.gguf
+
 COPY . .
 
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]
+# Run tests when the container starts
+CMD ["python", "-m", "pytest", "-v", "--color=yes"]
